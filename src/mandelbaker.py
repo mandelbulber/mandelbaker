@@ -16,7 +16,7 @@ height_of_mandelbrot = 512 # 512 | 1080 | 3840 | 7680 | 15360 | 30720 | 61440 | 
 width_of_mandelbrot  = 512 #            |  4K  |  8K  |  16K  |  32K  |  64K  |  128K  |  256K  |  512K  |
 max_iterations = 255
 number_of_processes = 1
-results_folder = "C:\source\Cryptography testing\mandelbrot\Results\\4Core"
+results_folder = "C:\mandelbaker\\results"
 # --------------------------------------------------------------------------------------------------------
 
 def mandelbrot_calc():
