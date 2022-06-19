@@ -1,23 +1,27 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-#---------------------------------------------------------------------------------------------------------
+# -----------------------------------------*-General-Information-*------------------------------------------
 # Created By  : Eugster Andrin
 # Created Date: 09/06/2022
 # version ='1.0'
-# --------------------------------------------------------------------------------------------------------
-""" This module represents a calculator used to render manderbrot fractals. """
-""" further information to be given """
-# --------------------------------------------------------------------------------------------------------
+# -----------------------------------------*-Program-Description-*------------------------------------------
+""" This module represents a calculator used to render manderbrot fractals.                              """
+""" To achieve the perfect mandelbrot of your personal liking, feel free to adjust the variables below.  """
+""" Be aware that this program is still WIP, so please don't set your expectations too high.             """
+""" There are still some (especially performance) improvements to be done, but I hope you can already    """
+""" enjoy the current state of this project.                                                             """
+""" For further information, have a look at the README.md.                                               """
+# ----------------------------------------------*-Libraries-*-----------------------------------------------
 from PIL import Image, ImageDraw
 from multiprocessing import Process, Queue
 import datetime
-# --------------------------------------------------------------------------------------------------------
-height_of_mandelbrot = 512 # 512 | 1080 | 3840 | 7680 | 15360 | 30720 | 61440 | 122880 | 245760 | 491520 |
-width_of_mandelbrot  = 512 #            |  4K  |  8K  |  16K  |  32K  |  64K  |  128K  |  256K  |  512K  |
+# -------------------------------------------*-User-Adjustments-*-------------------------------------------
+height_of_mandelbrot = 512 #   512 | 1080 | 3840 | 7680 | 15360 | 30720 | 61440 | 122880 | 245760 | 491520 |
+width_of_mandelbrot  = 512 #              |  4K  |  8K  |  16K  |  32K  |  64K  |  128K  |  256K  |  512K  |
 max_iterations = 255
-number_of_processes = 1
+number_of_processes = 1 # not integrated yet
 results_folder = "C:\mandelbaker\\results"
-# --------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------
 
 def mandelbrot_calc():
     imageQuartalsList = [(0, 0), (width_of_mandelbrot//2, 0), (0, height_of_mandelbrot//2), (width_of_mandelbrot//2, height_of_mandelbrot//2)]
