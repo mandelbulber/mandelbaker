@@ -16,3 +16,7 @@ Im open to recieve any suggestions for further features and improvements, so ple
 ## Usage & marketing
 
 The mandelbaker is completely open-source. Everyone is allowed to use and adjust it to achieve the best personal experience - for free!
+
+## Install-Guide
+
+The mandelbaker uses some libraries, which may not be install on your personal device yet. To do so, you can simply use the command 'pip install -r requirements.txt'. This will automatically install all required packages.
