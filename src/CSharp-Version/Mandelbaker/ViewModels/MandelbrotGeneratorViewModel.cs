@@ -48,8 +48,9 @@ namespace Mandelbaker.ViewModels
         public async void SetOutput(string output)
         {
             Output = output;
-            await Task.Delay(5000);
-            Output = string.Empty;
+            await Task.Delay(10000);
+            if (Output == output)
+                Output = string.Empty;
         }
 
         // Single Image Properties

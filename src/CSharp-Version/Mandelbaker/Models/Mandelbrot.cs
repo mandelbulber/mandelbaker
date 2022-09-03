@@ -13,7 +13,6 @@ using ILGPU;
 using ILGPU.Runtime;
 using ILGPU.Runtime.CPU;
 using ILGPU.Runtime.Cuda;
-using Newtonsoft.Json;
 
 namespace Mandelbaker.Models
 {
@@ -167,7 +166,6 @@ namespace Mandelbaker.Models
             {
                 double mandelHeight = iHeight * (yBottom - yTop) / resolution + yTop;
 
-                // Is this necessary?
                 var deviceInput = accelerator.Allocate1D(new double[] { mandelHeight, resolution, xLeft, xRight, iterations, iHeight });
                 var loadedKernel = accelerator.LoadAutoGroupedStreamKernel(
                 (Index1D iWidth, ArrayView<double> data, ArrayView<int> output) =>

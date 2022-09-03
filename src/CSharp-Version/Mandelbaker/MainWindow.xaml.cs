@@ -13,11 +13,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Newtonsoft.Json;
 using System.IO;
 using Mandelbaker.ViewModels;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Text.Json;
 
 namespace Mandelbaker
 {
@@ -53,7 +53,7 @@ namespace Mandelbaker
             (mci, mcis) = Mandelbrot.RenderMatrix(_viewModel.Resolution, _viewModel.Iterations, _viewModel.DimensionSize, _viewModel.XLeft, _viewModel.YTop, _viewModel.Zoom, _viewModel.Directory, _viewModel.Method == "GPU" ? true : false);
             _viewModel.SetOutput("Render complete: " + mci.ToString());
 
-            string jsonString = JsonConvert.SerializeObject((mci, mcis), Formatting.Indented);
+            string jsonString = JsonSerializer.Serialize((mci, mcis), new JsonSerializerOptions() { WriteIndented = true });
 
             Directory.CreateDirectory(@"C:\Mandelbaker\CalculationInformation\");
             DateTime now = DateTime.Now;
